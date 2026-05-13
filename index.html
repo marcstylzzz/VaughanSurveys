@@ -74,8 +74,14 @@
   .stat-num { font-family:'Playfair Display',serif; font-size:42px; font-weight:700; color:var(--navy); line-height:1; margin-bottom:4px; }
   .stat-label { font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); }
   .about-image { position:relative; }
-  .house-placeholder { width:100%; height:480px; background:linear-gradient(180deg,#b0c4d4 0%,#8fa3b3 60%,#6a8396 100%); position:relative; overflow:hidden; }
-  .house-placeholder::before { content:''; position:relative; bottom:0; left:10%; width:80%; height:65%; background:linear-gradient(160deg,#4a5568,#2d3748); clip-path:polygon(10% 100%,10% 30%,50% 0%,90% 30%,90% 100%); }
+  .house-placeholder { 
+  width: 100%; 
+  height: 480px; 
+  object-fit: cover; 
+  display: block; 
+  position: relative; 
+}
+
   .about-callout { position:absolute; bottom:60px; right:-20px; background:var(--navy); color:#fff; padding:28px; width:240px; }
   .about-callout svg { width:28px; height:28px; margin-bottom:14px; color:rgba(255,255,255,0.7); }
   .about-callout p { font-family:'Playfair Display',serif; font-size:18px; line-height:1.4; color:#fff; margin:0; }
