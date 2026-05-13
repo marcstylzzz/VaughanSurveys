@@ -36,7 +36,13 @@
     width:100px;
     height:80px;
     object-fit:contain;
-    
+    /*Image section*/
+   .map-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the image fill the area without stretching */
+  display: block;
+}
     
   }
   .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
@@ -287,7 +293,7 @@
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="process-image">
-    <div class="map-grid"><div class="map-label">Surveying map details</div></div>
+     <img src="https://drive.google.com/file/d/1n33OYEroLeH4Eb0JLir_YhfbppjqlvCW/view?usp=drive_link" alt="Surveying Map" class="map-picture"><div class="map-label">Surveying map details</div></div>
   </div>
   <div class="process-content">
     <p class="label">Our Methodology</p>
