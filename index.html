@@ -518,122 +518,88 @@
     </div>
   </div>
   <div>
-    <!-- Vaughan Land Surveyors Custom B2B RFP Form -->
-<form action="formspree.io" method="POST" enctype="multipart/form-data" class="vaughan-rfp-form">
+ <!-- Custom B2B RFP Intake Framework -->
+<div class="vaughan-rfp-container">
   
-  <div class="vaughan-form-row">
-    <div class="vaughan-form-group">
-      <label for="full-name">FULL NAME <span class="required">*</span></label>
-      <div class="input-icon-wrapper">
-        <span class="form-icon">👤</span>
-        <input type="text" id="full-name" name="name" placeholder="Jane Smith" required>
-      </div>
-    </div>
-
-    <div class="vaughan-form-group">
-      <label for="email">EMAIL ADDRESS <span class="required">*</span></label>
-      <div class="input-icon-wrapper">
-        <span class="form-icon">✉️</span>
-        <input type="email" id="email" name="email" placeholder="jane@example.com" required>
-      </div>
-    </div>
+  <!-- Legal Compliance Credibility Header -->
+  <div class="vaughan-rfp-header">
+    <h2>Request for Proposal (RFP) & Project Intake</h2>
+    <p>
+      <strong>Vaughan Land Surveyors</strong> (Operating under <strong>Provision Land Consultants Inc., O.L.S.</strong>) 
+      provides licensed legal surveying, reference plans, and subdivision layouts under the <em>Ontario Land Surveyors Act</em>. 
+      Securely drop your project details and attachments (up to 10MB) below to receive a formal commercial estimate.
+    </p>
   </div>
 
-  <div class="vaughan-form-row">
-    <div class="vaughan-form-group">
-      <label for="phone">PHONE NUMBER</label>
-      <div class="input-icon-wrapper">
-        <span class="form-icon">📞</span>
-        <input type="tel" id="phone" name="phone" placeholder="(705) 555-0100">
-      </div>
-    </div>
-
-    <div class="vaughan-form-group">
-      <label for="service">SERVICE NEEDED</label>
-      <div class="input-icon-wrapper">
-        <select id="service" name="service">
-          <option value="" disabled selected>Select a service...</option>
-          <option value="subdivision">Subdivision Layout / Draft M Plan</option>
-          <option value="reference">Reference Plan (R-Plan)</option>
-          <option value="topographic">Topographic Site Grading Survey</option>
-          <option value="construction">Construction Layout & Geodetic Control</option>
-          <option value="residential">Residential Boundary Retracement</option>
-        </select>
-      </div>
-    </div>
+  <!-- Seamless Youform Integration Engine -->
+  <div class="vaughan-iframe-wrapper">
+    <iframe 
+      src="https://app.youform.com/forms/rttywu5m" 
+      width="100%" 
+      height="750" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0" 
+      style="border: none; background: transparent; display: block;"
+      allow="geolocation; microphone; camera">
+      Loading framework...
+    </iframe>
   </div>
 
-  <div class="vaughan-form-group full-width">
-    <label for="details">PROJECT DETAILS <span class="required">*</span></label>
-    <div class="input-icon-wrapper alignment-top">
-      <span class="form-icon">💬</span>
-      <textarea id="details" name="project_details" placeholder="Describe your project, property location, and any specific requirements..." required></textarea>
-    </div>
-  </div>
-
-  <div class="vaughan-form-group full-width">
-    <label>ATTACHMENTS <span class="optional">(optional)</span></label>
-    <div class="vaughan-dropzone" onclick="document.getElementById('file-upload').click()">
-      <span class="upload-icon">📤</span>
-      <p class="dropzone-text">CLICK TO UPLOAD OR DRAG & DROP</p>
-      <input type="file" id="file-upload" name="attachments" multiple style="display: none;" onchange="updateFileName(this)">
-      <div id="file-list-preview"></div>
-    </div>
-  </div>
-
-  <button type="submit" class="vaughan-submit-btn">SUBMIT REQUEST</button>
-</form>
-
-<script>
-  // Quick script to show developers their files were successfully attached
-  function updateFileName(input) {
-    const preview = document.getElementById('file-list-preview');
-    preview.innerHTML = '';
-    if (input.files.length > 0) {
-      preview.style.display = 'block';
-      for (let i = 0; i < input.files.length; i++) {
-        preview.innerHTML += `<div class="file-item">✓ ${input.files[i].name}</div>`;
-      }
-    }
-  </div>
-</script>
+</div>
 
 <style>
-  /* Styling to match your target user interface perfectly */
-  .vaughan-rfp-form { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 900px; margin: 0 auto; color: #333; }
-  .vaughan-form-row { display: flex; gap: 20px; margin-bottom: 20px; }
-  .vaughan-form-group { flex: 1; display: flex; flex-direction: column; }
-  .vaughan-form-group.full-width { margin-bottom: 20px; }
-  .vaughan-form-group label { font-size: 11px; font-weight: 700; color: #1e293b; letter-spacing: 0.5px; margin-bottom: 8px; }
-  .vaughan-form-group label .required { color: #dc2626; }
-  .vaughan-form-group label .optional { color: #64748b; font-weight: 400; }
+  /* Professional Layout Architecture */
+  .vaughan-rfp-container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
   
-  .input-icon-wrapper { position: relative; display: flex; align-items: center; border: 1px solid #cbd5e1; border-radius: 4px; background: #fff; transition: border 0.2s; }
-  .input-icon-wrapper:focus-within { border-color: #1e3a8a; box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1); }
-  .input-icon-wrapper.alignment-top { align-items: flex-start; }
+  .vaughan-rfp-header {
+    margin-bottom: 25px;
+    border-left: 4px solid #1e3a8a; /* Professional Dark Navy Corporate Brand Accent */
+    padding-left: 20px;
+  }
   
-  .form-icon { padding: 12px; color: #94a3b8; display: flex; align-items: center; font-size: 16px; }
-  .input-icon-wrapper.alignment-top .form-icon { padding-top: 14px; }
+  .vaughan-rfp-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+  }
   
-  .input-icon-wrapper input, .input-icon-wrapper select, .input-icon-wrapper textarea { width: 100%; border: none; padding: 12px 12px 12px 0; font-size: 14px; background: transparent; outline: none; color: #334155; }
-  .input-icon-wrapper select { padding-right: 12px; cursor: pointer; }
-  .input-icon-wrapper textarea { height: 120px; resize: vertical; }
-  .input-icon-wrapper input::placeholder, .input-icon-wrapper textarea::placeholder { color: #94a3b8; font-weight: 400; }
+  .vaughan-rfp-header p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
   
-  .vaughan-dropzone { border: 2px dashed #cbd5e1; border-radius: 6px; padding: 30px 20px; text-align: center; background: #f8fafc; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
-  .vaughan-dropzone:hover { background: #f1f5f9; border-color: #1e3a8a; }
-  .upload-icon { font-size: 28px; display: block; margin-bottom: 8px; color: #64748b; }
-  .dropzone-text { font-size: 12px; font-weight: 700; color: #475569; letter-spacing: 0.5px; margin: 0; text-transform: uppercase; }
+  .vaughan-rfp-header strong {
+    color: #1e3a8a;
+  }
   
-  #file-list-preview { margin-top: 15px; text-align: left; background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 10px; display: none; }
-  .file-item { font-size: 13px; color: #15803d; font-weight: 500; margin-bottom: 4px; }
-  
-  .vaughan-submit-btn { background: #1e3a8a; color: #fff; border: none; padding: 14px 28px; font-size: 13px; font-weight: 700; letter-spacing: 1px; border-radius: 4px; cursor: pointer; width: auto; transition: background 0.2s; text-transform: uppercase; margin-top: 10px; }
-  .vaughan-submit-btn:hover { background: #172554; }
+  /* Prevent scrolling layout collisions and container jumping on mobile devices */
+  .vaughan-iframe-wrapper {
+    position: relative;
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    background: #ffffff;
+    overflow: hidden;
+  }
 
-  @media (max-width: 768px) { .vaughan-form-row { flex-direction: column; gap: 20px; } }
+  @media (max-width: 640px) {
+    .vaughan-rfp-container { margin: 20px auto; }
+    .vaughan-rfp-header h2 { font-size: 19px; }
+    .vaughan-rfp-header p { font-size: 13px; }
+  }
 </style>
-
+  
       </div>
       <div class="form-group full">
         <label>Attachments <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
