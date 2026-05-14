@@ -55,10 +55,19 @@
     body { font-family: 'Lato', sans-serif; color: var(--text-dark); background: #fff; overflow-x: hidden; }
 
     /* TOP BAR */
-    .top-bar { background:#fff; border-bottom:1px solid var(--border); padding:10px 4%; display:flex; justify-content:flex-start; align-items:center; gap:20px; }
+    .top-bar { background:#fff; border-bottom:1px solid var(--border); padding:10px 4%; display:flex; justify-content:space-between; align-items:center; gap:20px; }
     .top-bar a { color:var(--navy); text-decoration:none; display:flex; align-items:center; gap:7px; }
     .top-bar a:hover { opacity:0.75; }
     .top-bar svg { width:16px; height:16px; }
+     @media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column; /* Stacks phone on top of email on mobile screens */
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Creates clean vertical space between phone and email */
+    padding: 10px 15px; /* Adds safe breathing room on small screens */
+  }
+}
 
    /* REPAIRED DESKTOP LAYOUT ARCHITECTURE */
   nav { 
