@@ -177,6 +177,87 @@
   .footer-bottom-links { display:flex; gap:24px; }
   .footer-bottom-links a { font-size:13px; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.2s; }
   .footer-bottom-links a:hover { color:#fff; }
+
+  /* ── MOBILE HAMBURGER ── */
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:none; z-index:200; }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--navy); transition:all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; z-index:150; flex-direction:column; align-items:center; justify-content:center; gap:32px; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a { font-family:'Lato',sans-serif; font-size:20px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); text-decoration:none; }
+  .mobile-menu .btn-nav { background:var(--navy); color:#fff !important; padding:16px 40px; }
+
+  @media (max-width: 768px) {
+
+    /* TOP BAR */
+    .top-bar { display:none; }
+
+    /* NAV */
+    nav { padding:0 20px; min-height:68px; }
+    .logo-img { width:70px; height:56px; }
+    .logo-text { font-size:14px; }
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+
+    /* HERO */
+    .hero { padding:60px 24px 70px; min-height:auto; }
+    .hero h1 { font-size:38px; }
+    .hero p { font-size:15px; margin-bottom:32px; }
+    .hero-badge { font-size:10px; padding:6px 12px; }
+    .hero-buttons { flex-direction:column; gap:12px; }
+    .btn-cream, .btn-outline-white { text-align:center; padding:14px 24px; }
+
+    /* ABOUT */
+    .about { grid-template-columns:1fr; gap:40px; padding:60px 24px; }
+    .about-text h2 { font-size:32px; }
+    .about-text p { font-size:15px; }
+    .about-image { margin-top:0; }
+    .house-placeholder { height:280px; }
+    .about-callout { position:relative; bottom:auto; right:auto; width:100%; margin-top:16px; }
+    .stats { gap:32px; }
+    .stat-num { font-size:32px; }
+
+    /* SERVICES */
+    .services { padding:60px 24px; }
+    .section-header h2 { font-size:32px; }
+    .section-header p { font-size:14px; }
+    .services-grid { grid-template-columns:1fr; }
+    .service-card { padding:28px 24px; }
+
+    /* PROCESS */
+    .process { grid-template-columns:1fr; }
+    .process-image { min-height:240px; }
+    .process-content { padding:48px 24px; }
+    .process-content h2 { font-size:32px; margin-bottom:28px; }
+
+    /* REVIEWS */
+    .reviews { padding:60px 24px; }
+    .reviews-header h2 { font-size:32px; }
+    .reviews-grid { grid-template-columns:1fr; gap:16px; }
+    .review-card { padding:24px 20px; }
+
+    /* CTA */
+    .cta { padding:60px 24px; }
+    .cta h2 { font-size:32px; }
+    .cta p { font-size:15px; }
+    .cta-buttons { flex-direction:column; align-items:center; gap:12px; }
+    .btn-navy, .btn-outline-navy { width:100%; max-width:300px; text-align:center; padding:16px 24px; }
+
+    /* CONTACT */
+    .contact { grid-template-columns:1fr; gap:40px; padding:60px 24px; }
+    .contact-left h2 { font-size:32px; }
+    .contact-form { grid-template-columns:1fr; }
+    .form-group.full { grid-column:1; }
+
+    /* FOOTER */
+    footer { padding:48px 24px 32px; }
+    .footer-grid { grid-template-columns:1fr; gap:36px; }
+    .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
+    .footer-bottom-links { justify-content:center; }
+  }
+
 </style>
 </head>
 <body>
@@ -207,7 +288,21 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#contact" class="btn-nav">Get in Touch</a></li>
   </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#process" onclick="closeMenu()">Our Process</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#contact" class="btn-nav" onclick="closeMenu()">Get in Touch</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -488,6 +583,21 @@
 </footer>
 
 <script>
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
 function handleSubmit() {
   const name = document.querySelector('input[type="text"]').value;
   const email = document.querySelector('input[type="email"]').value;
