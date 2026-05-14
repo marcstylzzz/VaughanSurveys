@@ -10,6 +10,34 @@
 <link href="googleapis.com" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      /* ── FORCE GLOBAL VIEWPORT DEFENSE ── */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* Locks out horizontal page sliding */
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* REPAIRED ANTI-JUMPING VIEWPORT MAP CONTAINER */
+  .vaughan-iframe-wrapper {
+    position: relative;
+    width: 100% !important;
+    max-width: 100% !important; /* Prevents frame from breaking mobile widths */
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    overflow: hidden; /* Hides horizontal iframe components */
+    box-sizing: border-box !important; /* Corrects layout width sizing errors */
+  }
+
+  .vaughan-iframe-wrapper iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
     :root {
       --navy: #1a2744;
       --navy-dark: #0f1a30;
