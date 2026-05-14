@@ -5,23 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vaughan Land Surveyors</title>
- <!-- YOUR LINE 7: <title>Vaughan Land Surveyors</title> -->
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com" rel="stylesheet" />
-
-
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      /* ── FORCE GLOBAL VIEWPORT DEFENSE ── */
-  html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important; /* Locks out horizontal page sliding */
-    position: relative;
-    margin: 0;
-    padding: 0;
-  }
+    
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --navy: #1a2744;
 
   /* REPAIRED ANTI-JUMPING VIEWPORT MAP CONTAINER */
   .vaughan-iframe-wrapper {
@@ -538,7 +538,7 @@
       margin-left: auto !important;
       margin-right: auto !important;
     }
-    .btn-navy, .btn-outline-navy {
+        .btn-navy, .btn-outline-navy {
       display: block !important;
       width: 100% !important;
       text-align: center !important;
@@ -550,6 +550,7 @@
 </style>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
+
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#services" onclick="closeMenu()">Services</a>
   <a href="#process" onclick="closeMenu()">Our Process</a>
