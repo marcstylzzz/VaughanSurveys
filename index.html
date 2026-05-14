@@ -7,7 +7,7 @@
   <title>Vaughan Land Surveyors</title>
   <link rel="preconnect" href="googleapis.com">
 <link rel="preconnect" href="gstatic.com" crossorigin>
-<link href="googleapis.com" rel="stylesheet" />
+<link href="https://googleapis.com" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       /* ── FORCE GLOBAL VIEWPORT DEFENSE ── */
@@ -55,7 +55,7 @@
     body { font-family: 'Lato', sans-serif; color: var(--text-dark); background: #fff; overflow-x: hidden; }
 
     /* TOP BAR */
-    .top-bar { background:#fff; border-bottom:1px solid var(--border); padding:10px 60px; display:flex; justify-content:flex-end; gap:32px; font-size:14px; color:var(--navy); }
+    .top-bar { background:#fff; border-bottom:1px solid var(--border); padding:10px 4%; display:flex; justify-content:flex-start; align-items:center; gap:20px; }
     .top-bar a { color:var(--navy); text-decoration:none; display:flex; align-items:center; gap:7px; }
     .top-bar a:hover { opacity:0.75; }
     .top-bar svg { width:16px; height:16px; }
@@ -109,19 +109,34 @@
     margin-left: auto; /* Dynamically pulls the entire menu navigation row right */
   }
 
-  .nav-links a { 
-    font-family:'Lato',sans-serif; 
-    font-size:13px; 
-    font-weight:700; 
-    letter-spacing:0.08em; 
-    text-transform:uppercase; 
-    color:var(--navy); 
-    text-decoration:none; 
-    transition:opacity 0.2s; 
-    white-space: nowrap;
-  }
+ 112  .nav-links a {
+113    font-family:'Lato',sans-serif;
+114    font-size:13px;
+115    font-weight:700;
+116    letter-spacing:0.08em;
+117    text-transform:uppercase;
+118    color:var(--navy);
+119    text-decoration:none;
+120    transition:opacity 0.2s;
+121    white-space: nowrap;
+122  }
+123  @media (max-width: 768px) {
+124    .nav-links {
+125      flex-wrap: wrap; 
+126      justify-content: center; 
+127      gap: 12px 18px; 
+128      margin-left: 0; 
+129      padding: 10px 0;
+130      width: 100%;
+131    }
+132    .nav-links a {
+133      white-space: normal; 
+134      font-size: 12px; 
+135    }
+136  }
+137  
+138  /* HERO ... */
 
-    /* HERO */
     .hero { background:linear-gradient(135deg,#0f1a30 0%,#1a2744 50%,#1e3060 100%); padding:100px 60px 110px; min-height:520px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; }
     .hero::after { content:''; position:absolute; right:0; top:0; width:50%; height:100%; background:radial-gradient(ellipse at right center,rgba(30,60,100,0.4) 0%,transparent 70%); pointer-events:none; }
     .hero-badge { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.3); color:rgba(255,255,255,0.85); font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:8px 16px; margin-bottom:30px; width:fit-content; }
