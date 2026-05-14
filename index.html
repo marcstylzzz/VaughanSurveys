@@ -465,6 +465,39 @@
       .footer-grid { grid-template-columns:1fr; gap:36px; }
       .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
       .footer-bottom-links { justify-content:center; }
+        /* RESPONSIVE BREAKPOINT REPAIRS FOR MOBILE DEVICES */
+  @media (max-width: 640px) {
+    
+    /* CTA Layout Core Optimization */
+    .cta {
+      padding: 60px 20px !important;
+    }
+    
+    .cta h2 {
+      font-size: 28px !important;
+      line-height: 1.2 !important;
+    }
+    
+    /* FORCES CTA BUTTONS TO STANDARDIZE EQUALLY ON PHONES */
+    .cta-buttons {
+      flex-direction: column !important;
+      align-items: stretch !important; /* Spreads buttons to match phone boundaries edge-to-edge */
+      gap: 12px !important;
+      width: 100% !important;
+      max-width: 320px; /* Secure wrapper to prevent oversized wide boxes on tablet scales */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-navy, .btn-outline-navy {
+      display: block !important;
+      width: 100% !important;
+      text-align: center !important;
+      padding: 16px 20px !important;
+      box-sizing: border-box !important;
+    }
+  }
+
     }
 
     /* FILE UPLOAD INTERFACE */
