@@ -415,80 +415,74 @@
   }
 
   /* FLUID MOBILE CONTAINER MEDIA SCALING */
+   /* ── 1. TABLET RESPONSIVE OVERRIDES (1024px and Down) ── */
+  @media (max-width: 1024px) {
+    .top-bar { padding: 10px 24px; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero { padding: 60px 24px 70px; min-height: auto; }
+    .hero h1 { font-size: 38px; }
+    .hero p { font-size: 15px; margin-bottom: 32px; }
+    .hero-badge { font-size: 10px; padding: 6px 12px; }
+    .hero-buttons { flex-direction: column; gap: 12px; }
+    .btn-cream, .btn-outline-white { text-align: center; padding: 14px 24px; }
+    .about { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+    .about-text h2 { font-size: 32px; }
+    .about-text p { font-size: 15px; }
+    .house-placeholder { height: 280px; }
+    .about-callout { position: relative; bottom: auto; right: auto; width: 100%; margin-top: 16px; }
+    .stats { gap: 32px; }
+    .stat-num { font-size: 32px; }
+    .services { padding: 60px 24px; }
+    .section-header h2 { font-size: 32px; }
+    .section-header p { font-size: 14px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 28px 24px; }
+    .process { grid-template-columns: 1fr; }
+    .process-image { min-height: 240px; }
+    .process-content { padding: 48px 24px; }
+    .process-content h2 { font-size: 32px; margin-bottom: 28px; }
+    .reviews { padding: 60px 24px; }
+    .reviews-header h2 { font-size: 32px; }
+    .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+    .review-card { padding: 24px 20px; }
+    .cta { padding: 60px 24px; }
+    .cta h2 { font-size: 32px; }
+    .cta p { font-size: 15px; }
+    .cta-buttons { flex-direction: column; align-items: center; gap: 12px; }
+    .btn-navy, .btn-outline-navy { width: 100%; max-width: 300px; text-align: center; padding: 16px 24px; }
+    .contact { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+    .contact-left h2 { font-size: 32px; }
+    .contact-form { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    footer { padding: 48px 24px 32px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-bottom-links { justify-content: center; }
+  }
+
+  /* ── 2. MOBILE RESPONSIVE OVERRIDES (640px and Down) ── */
   @media (max-width: 640px) {
+    /* Fluid RFP Container Media Scaling */
     .vaughan-rfp-container { margin: 20px auto; }
     .vaughan-rfp-header h2 { font-size: 24px; }
     .vaughan-rfp-header p { font-size: 14px; text-align: left !important; }
-  }
-
-    @media (max-width: 1024px) {
-      .top-bar { padding:10px 24px; }
-      nav { padding:0 24px; }
-      .nav-links { display:none; }
-      .hamburger { display:flex; }
-      .hero { padding:60px 24px 70px; min-height:auto; }
-      .hero h1 { font-size:38px; }
-      .hero p { font-size:15px; margin-bottom:32px; }
-      .hero-badge { font-size:10px; padding:6px 12px; }
-      .hero-buttons { flex-direction:column; gap:12px; }
-      .btn-cream, .btn-outline-white { text-align:center; padding:14px 24px; }
-      .about { grid-template-columns:1fr; gap:40px; padding:60px 24px; }
-      .about-text h2 { font-size:32px; }
-      .about-text p { font-size:15px; }
-      .house-placeholder { height:280px; }
-      .about-callout { position:relative; bottom:auto; right:auto; width:100%; margin-top:16px; }
-      .stats { gap:32px; }
-      .stat-num { font-size:32px; }
-      .services { padding:60px 24px; }
-      .section-header h2 { font-size:32px; }
-      .section-header p { font-size:14px; }
-      .services-grid { grid-template-columns:1fr; }
-      .service-card { padding:28px 24px; }
-      .process { grid-template-columns:1fr; }
-      .process-image { min-height:240px; }
-      .process-content { padding:48px 24px; }
-      .process-content h2 { font-size:32px; margin-bottom:28px; }
-      .reviews { padding:60px 24px; }
-      .reviews-header h2 { font-size:32px; }
-      .reviews-grid { grid-template-columns:1fr; gap:16px; }
-      .review-card { padding:24px 20px; }
-      .cta { padding:60px 24px; }
-      .cta h2 { font-size:32px; }
-      .cta p { font-size:15px; }
-      .cta-buttons { flex-direction:column; align-items:center; gap:12px; }
-      .btn-navy, .btn-outline-navy { width:100%; max-width:300px; text-align:center; padding:16px 24px; }
-      .contact { grid-template-columns:1fr; gap:40px; padding:60px 24px; }
-      .contact-left h2 { font-size:32px; }
-      .contact-form { grid-template-columns:1fr; }
-      .form-group.full { grid-column:1; }
-      footer { padding:48px 24px 32px; }
-      .footer-grid { grid-template-columns:1fr; gap:36px; }
-      .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
-      .footer-bottom-links { justify-content:center; }
-        /* RESPONSIVE BREAKPOINT REPAIRS FOR MOBILE DEVICES */
-  @media (max-width: 640px) {
     
     /* CTA Layout Core Optimization */
-    .cta {
-      padding: 60px 20px !important;
-    }
+    .cta { padding: 60px 20px !important; }
+    .cta h2 { font-size: 28px !important; line-height: 1.2 !important; }
     
-    .cta h2 {
-      font-size: 28px !important;
-      line-height: 1.2 !important;
-    }
-    
-    /* FORCES CTA BUTTONS TO STANDARDIZE EQUALLY ON PHONES */
+    /* Forces CTA Buttons to Stack Cleanly on Phones */
     .cta-buttons {
       flex-direction: column !important;
-      align-items: stretch !important; /* Spreads buttons to match phone boundaries edge-to-edge */
+      align-items: stretch !important;
       gap: 12px !important;
       width: 100% !important;
-      max-width: 320px; /* Secure wrapper to prevent oversized wide boxes on tablet scales */
+      max-width: 320px;
       margin-left: auto;
       margin-right: auto;
     }
-
     .btn-navy, .btn-outline-navy {
       display: block !important;
       width: 100% !important;
@@ -498,7 +492,6 @@
     }
   }
 
-    }
 
     /* FILE UPLOAD INTERFACE */
     .file-upload-label { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; border:2px dashed var(--border); padding:28px 20px; cursor:pointer; transition:border-color 0.2s, background 0.2s; background:#fafafa; text-align:center; }
