@@ -75,13 +75,14 @@
     padding:0 40px; 
     display:flex; 
     align-items:center; 
-    justify-content:space-between; /* Pushes Logo to Left, Links/Button to Right */
+    justify-content:space-between;
     border-bottom:1px solid var(--border); 
     position:sticky; 
     top:0; 
-    z-index:100; 
+    z-index:200; 
     min-height:95px; 
     width: 100%;
+    overflow: visible;
   }
 
   .nav-logo { 
@@ -132,9 +133,9 @@
   /* Nav links hidden on mobile — hamburger takes over */
   @media (max-width: 1024px) {
     .nav-links { display: none !important; }
-    .hamburger { display: flex !important; }
+    .hamburger { display: flex !important; flex-direction: column !important; }
   }
-  
+
   /* HERO ... */
 
     .hero { background:linear-gradient(135deg,#0f1a30 0%,#1a2744 50%,#1e3060 100%); padding:100px 60px 110px; min-height:520px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; }
@@ -415,15 +416,61 @@
     .footer-bottom-links a { font-size:13px; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.2s; }
     .footer-bottom-links a:hover { color:#fff; }
     /* ── MOBILE HAMBURGER & RESPONSIVE LAYOUTS ── */
-    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:none; z-index:200; }
-    .hamburger span { display:block; width:24px; height:2px; background:var(--navy); transition:all 0.3s; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 10px;
+      background: none;
+      border: none;
+      flex-shrink: 0;
+      margin-left: auto;
+      z-index: 300;
+    }
+    .hamburger span { display:block; width:26px; height:2.5px; background:var(--navy); transition:all 0.3s; border-radius:2px; }
     .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(2) { opacity:0; }
     .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-    
-    .mobile-menu { display:none; position:fixed; top:88px; left:0; width:100%; background:#fff; border-bottom:1px solid var(--border); padding:24px; flex-direction:column; gap:16px; z-index:99; box-shadow:0 4px 6px rgba(0,0,0,0.05); }
-    .mobile-menu.open { display:flex; }
-    .mobile-menu a { font-family:'Lato',sans-serif; font-size:14px; font-weight:700; color:var(--navy); text-decoration:none; text-transform:uppercase; letter-spacing:0.08em; }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 95px;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px 24px;
+      flex-direction: column;
+      gap: 0;
+      z-index: 200;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      display: block;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a.btn-nav {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 24px;
+      text-align: center;
+      margin-top: 12px;
+      border-bottom: none;
+      border-radius: 0;
+    }
 
   /* PROFESSIONAL CORPORATE FORM ARCHITECTURE */
   .vaughan-rfp-container {
@@ -473,7 +520,8 @@
   /* FLUID MOBILE CONTAINER MEDIA SCALING */
    /* ── 1. TABLET RESPONSIVE OVERRIDES (1024px and Down) ── */
   @media (max-width: 1024px) {
-    .top-bar { padding: 10px 24px; }
+    .nav-links { display: none !important; }
+    .hamburger { display: flex !important; flex-direction: column !important; }
     nav { padding: 0 24px; }
     .hero { padding: 60px 24px 70px; min-height: auto; }
     .hero h1 { font-size: 38px; }
@@ -548,8 +596,7 @@
     nav { padding: 0 16px; min-height: 75px; }
     .logo-text { font-size: 17px; }
     .logo-img { width: 60px; height: 50px; }
-    .mobile-menu { top: 75px; }
-    .hero { padding: 48px 16px 56px; }
+    .mobile-menu { top: 75px; }    .hero { padding: 48px 16px 56px; }
     .hero-badge { font-size: 9px; padding: 5px 10px; }
     .hero h1 { font-size: 28px; }
     .hero p { font-size: 14px; }
