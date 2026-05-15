@@ -440,18 +440,14 @@
       position: fixed;
       top: 95px;
       left: 0;
-      right: 0;
       width: 100%;
-      max-height: calc(100vh - 95px);
-      overflow-y: auto;
       background: #fff;
       border-bottom: 1px solid var(--border);
-      padding: 16px 24px 32px;
+      padding: 16px 24px 24px;
       flex-direction: column;
       gap: 0;
       z-index: 200;
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-      box-sizing: border-box;
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
@@ -527,7 +523,7 @@
   @media (max-width: 1024px) {
     .nav-links { display: none !important; }
     .hamburger { display: flex !important; flex-direction: column !important; }
-    nav { padding: 0 24px; }
+    nav { padding: 0 16px 0 20px; }
     .hero { padding: 60px 24px 70px; min-height: auto; }
     .hero h1 { font-size: 38px; }
     .hero p { font-size: 15px; margin-bottom: 32px; }
@@ -598,7 +594,7 @@
   /* ── 3. SMALL PHONE OVERRIDES (480px and Down) ── */
   @media (max-width: 480px) {
     .top-bar { padding: 8px 16px; font-size: 13px; }
-    nav { padding: 0 16px; min-height: 75px; }
+    nav { padding: 0 12px 0 16px; min-height: 75px; }
     .logo-text { font-size: 17px; }
     .logo-img { width: 60px; height: 50px; }
     .mobile-menu { top: 75px; }    .hero { padding: 48px 16px 56px; }
