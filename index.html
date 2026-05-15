@@ -129,19 +129,10 @@
     transition:opacity 0.2s;
     white-space: nowrap;
   }
-  @media (max-width: 768px) {
-    .nav-links {
-      flex-wrap: wrap; 
-      justify-content: center; 
-      gap: 12px 18px; 
-      margin-left: 0; 
-      padding: 10px 0;
-      width: 100%;
-    }
-    .nav-links a {
-      white-space: normal; 
-      font-size: 12px; 
-    }
+  /* Nav links hidden on mobile — hamburger takes over */
+  @media (max-width: 1024px) {
+    .nav-links { display: none !important; }
+    .hamburger { display: flex !important; }
   }
   
   /* HERO ... */
@@ -157,13 +148,20 @@
     .btn-cream:hover { opacity:0.85; }
     .btn-outline-white { background:transparent; color:#fff; padding:16px 32px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border:1px solid rgba(255,255,255,0.5); cursor:pointer; transition:border-color 0.2s,opacity 0.2s; }
     .btn-outline-white:hover { border-color:#fff; opacity:0.85; }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 30px; }
+      .hero p { font-size: 14px; }
+      .hero-buttons { flex-direction: column; gap: 10px; width: 100%; }
+      .btn-cream, .btn-outline-white { text-align: center; width: 100%; }
+    }
     /* ABOUT */
     .about { padding:100px 60px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; background:var(--off-white); }
     .about-text .label { font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--navy); margin-bottom:18px; }
     .about-text h2 { font-family:'Playfair Display',serif; font-size:48px; font-weight:700; color:var(--navy); line-height:1.1; margin-bottom:20px; }
     .about-text .underline-accent { width:60px; height:3px; background:var(--green-accent); margin-bottom:28px; }
     .about-text p { font-size:16px; line-height:1.75; color:#374151; margin-bottom:20px; text-align: justify; text-justify: inter-word; }
-    .stats { display:flex; gap:60px; margin-top:16px; }
+    .stats { display:flex; gap:60px; margin-top:16px; flex-wrap:wrap; }
+    .stat-num { font-family:'Playfair Display',serif; font-size:42px; font-weight:700; color:var(--navy); line-height:1; margin-bottom:4px; }
     .stat-num { font-family:'Playfair Display',serif; font-size:42px; font-weight:700; color:var(--navy); line-height:1; margin-bottom:4px; }
     .stat-label { font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); }
     .about-image { position:relative; }
@@ -184,6 +182,8 @@
     .service-icon svg { width:26px; height:26px; color:var(--navy); }
     .service-card h3 { font-size:20px; font-weight:700; color:var(--navy); margin-bottom:14px; }
     .service-card p { font-size:15px; line-height:1.7; color:var(--text-muted); text-align: justify; text-justify: inter-word; }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
 
     /* PROCESS */
     .process { background:var(--navy); display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
@@ -203,6 +203,8 @@
     .stars-row { display:flex; gap:6px; justify-content:center; margin-top:4px; }
     .star { color:var(--gold); font-size:26px; }
     .reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    @media (max-width: 900px) { .reviews-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
     .review-card { background:#fff; border:1px solid var(--border); padding:32px 28px; display:flex; flex-direction:column; gap:20px; }
     .review-stars { color:var(--gold); font-size:18px; letter-spacing:2px; }
     .review-text { font-family:'Playfair Display',serif; font-style:italic; font-size:15px; line-height:1.7; color:#374151; flex:1; text-align: justify; text-justify: inter-word; }
@@ -393,6 +395,8 @@
     /* FOOTER */
     footer { background:#111827; padding:70px 60px 40px; }
     .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1.2fr 0.8fr; gap:48px; margin-bottom:48px; }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } footer { padding: 48px 24px 32px; } }
+    @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
     .footer-brand .footer-logo { font-family:'Lato',sans-serif; font-size:18px; font-weight:900; text-transform:uppercase; letter-spacing:0.04em; color:#fff; line-height:1.2; margin-bottom:16px; }
     .footer-brand p { font-size:14px; line-height:1.7; color:rgba(255,255,255,0.5); max-width:260px; }
     .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:20px; }
@@ -471,14 +475,12 @@
   @media (max-width: 1024px) {
     .top-bar { padding: 10px 24px; }
     nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
     .hero { padding: 60px 24px 70px; min-height: auto; }
     .hero h1 { font-size: 38px; }
     .hero p { font-size: 15px; margin-bottom: 32px; }
     .hero-badge { font-size: 10px; padding: 6px 12px; }
-    .hero-buttons { flex-direction: column; gap: 12px; }
-    .btn-cream, .btn-outline-white { text-align: center; padding: 14px 24px; }
+    .hero-buttons { flex-direction: column; gap: 12px; width: 100%; }
+    .btn-cream, .btn-outline-white { text-align: center; padding: 14px 24px; width: 100%; }
     .about { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
     .about-text h2 { font-size: 32px; }
     .about-text p { font-size: 15px; }
@@ -489,7 +491,6 @@
     .services { padding: 60px 24px; }
     .section-header h2 { font-size: 32px; }
     .section-header p { font-size: 14px; }
-    .services-grid { grid-template-columns: 1fr; }
     .service-card { padding: 28px 24px; }
     .process { grid-template-columns: 1fr; }
     .process-image { min-height: 240px; }
@@ -497,53 +498,74 @@
     .process-content h2 { font-size: 32px; margin-bottom: 28px; }
     .reviews { padding: 60px 24px; }
     .reviews-header h2 { font-size: 32px; }
-    .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
     .review-card { padding: 24px 20px; }
     .cta { padding: 60px 24px; }
     .cta h2 { font-size: 32px; }
     .cta p { font-size: 15px; }
     .cta-buttons { flex-direction: column; align-items: center; gap: 12px; }
-    .btn-navy, .btn-outline-navy { width: 100%; max-width: 300px; text-align: center; padding: 16px 24px; }
+    .btn-navy, .btn-outline-navy { width: 100%; max-width: 320px; text-align: center; padding: 16px 24px; }
     .contact { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
     .contact-left h2 { font-size: 32px; }
     .contact-form { grid-template-columns: 1fr; }
     .form-group.full { grid-column: 1; }
-    footer { padding: 48px 24px 32px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    /* Touch-friendly form inputs */
+    .form-group input, .form-group select, .form-group textarea { font-size: 16px !important; padding: 14px 16px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     .footer-bottom-links { justify-content: center; }
+    /* Mobile menu sits just below nav */
+    .mobile-menu { top: 95px; }
   }
 
   /* ── 2. MOBILE RESPONSIVE OVERRIDES (640px and Down) ── */
   @media (max-width: 640px) {
-    /* Fluid RFP Container Media Scaling */
     .vaughan-rfp-container { margin: 20px auto; }
     .vaughan-rfp-header h2 { font-size: 24px; }
     .vaughan-rfp-header p { font-size: 14px; text-align: left !important; }
-    
-    /* CTA Layout Core Optimization */
     .cta { padding: 60px 20px !important; }
     .cta h2 { font-size: 28px !important; line-height: 1.2 !important; }
-    
-    /* Forces CTA Buttons to Stack Cleanly on Phones */
     .cta-buttons {
       flex-direction: column !important;
       align-items: stretch !important;
       gap: 12px !important;
       width: 100% !important;
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .btn-navy, .btn-outline-navy {
       display: block !important;
       width: 100% !important;
+      max-width: 100% !important;
       text-align: center !important;
       padding: 16px 20px !important;
       box-sizing: border-box !important;
     }
+    /* Wrap review footer on small phones */
+    .review-footer { flex-wrap: wrap; gap: 8px; }
+    .section-header h2 { font-size: 26px; }
   }
 
+  /* ── 3. SMALL PHONE OVERRIDES (480px and Down) ── */
+  @media (max-width: 480px) {
+    .top-bar { padding: 8px 16px; font-size: 13px; }
+    nav { padding: 0 16px; min-height: 75px; }
+    .logo-text { font-size: 17px; }
+    .logo-img { width: 60px; height: 50px; }
+    .mobile-menu { top: 75px; }
+    .hero { padding: 48px 16px 56px; }
+    .hero-badge { font-size: 9px; padding: 5px 10px; }
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 14px; }
+    .about { padding: 48px 16px; }
+    .about-text h2 { font-size: 26px; }
+    .services { padding: 48px 16px; }
+    .service-card { padding: 22px 18px; }
+    .process-content { padding: 36px 16px; }
+    .reviews { padding: 48px 16px; }
+    .cta { padding: 48px 16px !important; }
+    .contact { padding: 48px 16px !important; }
+    .contact-left h2 { font-size: 26px; }
+    .offices-grid-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .footer-bottom { padding-top: 20px; }
+  }
 
     /* FILE UPLOAD INTERFACE */
     .file-upload-label { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; border:2px dashed var(--border); padding:28px 20px; cursor:pointer; transition:border-color 0.2s, background 0.2s; background:#fafafa; text-align:center; }
