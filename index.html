@@ -1060,5 +1060,35 @@
     window.location.href = 'mailto:info@://vaughansurveys.com' + subject + '&body=' + body;
   }
 </script>
+   <style>
+    /* Fixes the top bar alignment to match the first image */
+    .top-bar {
+      display: flex !important;
+      flex-direction: row !important;      
+      justify-content: flex-end !important; 
+      align-items: center !important;       
+      gap: 24px !important;                 
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 10px 40px 0 0 !important;    
+    }
+
+    /* Adjusts the font sizes and alignment of the links */
+    .top-bar a {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;                  
+      font-size: 13px !important;           
+      color: #555555 !important;            
+      text-decoration: none !important;
+    }
+
+    /* Forces the SVG icons inside the bar to remain small and aligned */
+    .top-bar svg {
+      width: 14px !important;
+      height: 14px !important;
+      stroke: #555555 !important;           
+    }
+  </style>
 </body>
 </html>
